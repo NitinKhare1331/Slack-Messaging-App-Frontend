@@ -1,5 +1,5 @@
-import './App.css'
-import { Button } from "@/components/ui/button"
+import './App.css';
+import { Button } from "@/components/ui/button";
 
 function App() {
 
@@ -10,4 +10,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
