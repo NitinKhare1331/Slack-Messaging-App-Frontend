@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { SignupContainer } from '@/components/organisms/Auth/SignupContainer';
 import { SigninContainer } from '@/components/organisms/Auth/SigninContainer';
 import { Toaster } from '@/components/ui/toaster';
+import { Home } from '@/pages/Home/Home';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path='/auth/signup' element={ <Auth> <SignupContainer /> </Auth> } />
         <Route path='/auth/signin' element={ <Auth> <SigninContainer /> </Auth> } />
+        <Route path='/home' element={ <Home /> } />
 
         <Route path='/*' element={ <Notfound /> }/>
       </Routes>

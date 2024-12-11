@@ -18,7 +18,7 @@ export const signInRequest = async ({ email, password }) => {
     try {
         const response = await axios.post("/users/signin", {
             email,
-            username
+            password
         });
         return response.data;
     } catch (error) {
