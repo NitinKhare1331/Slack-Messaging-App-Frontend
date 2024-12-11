@@ -5,12 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export const SigninCard = () => {
-
-    const [signupForm, setSignupForm] = useState({
-        email: '',
-        password: ''
-    });
+export const SigninCard = ({ signupForm, setSignupForm }) => {
 
     const navigate = useNavigate();
 
