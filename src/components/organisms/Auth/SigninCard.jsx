@@ -5,13 +5,11 @@ import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export const SignupCard = () => {
+export const SigninCard = () => {
 
     const [signupForm, setSignupForm] = useState({
         email: '',
-        password: '',
-        confirmPassword: '',
-        username: ''
+        password: ''
     });
 
     const navigate = useNavigate();
@@ -19,8 +17,8 @@ export const SignupCard = () => {
     return (
         <Card className="w-full h-full">
             <CardHeader>
-                <CardTitle>Sign Up</CardTitle>
-                <CardDescription>Sign Up to access your account</CardDescription>
+                <CardTitle>Sign In</CardTitle>
+                <CardDescription>Sign In to log in</CardDescription>
             </CardHeader>
             <CardContent>
                 <form className="space-y-3">
@@ -40,22 +38,6 @@ export const SignupCard = () => {
                         type="password"
                         disabled={false}
                     />
-                    <Input 
-                        placeholder="Confirm Password"
-                        required
-                        onChange={(e) => setSignupForm({ ...signupForm, confirmPassword:e.target.value })}
-                        value={signupForm.confirmPassword}
-                        type="password"
-                        disabled={false}
-                    />
-                    <Input 
-                        placeholder="Your username"
-                        required
-                        onChange={(e) => setSignupForm({ ...signupForm, username:e.target.value })}
-                        value={signupForm.username}
-                        type="text"
-                        disabled={false}
-                    />
                     <Button 
                         disabled={false}
                         size="lg"
@@ -68,12 +50,12 @@ export const SignupCard = () => {
 
                 <Separator className="my-5" />
                 <p className="text-sm text-muted-foreground mt-4">
-                    Already have an account ? {' '}
+                    Do not have an account ? {' '}
                     <span 
                         className="text-sky-600 hover:underline cursor-pointer"
-                        onClick={() => navigate('/auth/signin')}
+                        onClick={() => navigate('/auth/signup')}
                     >
-                        Sign In
+                        Sign Up
                     </span>
                 </p>
             </CardContent>
