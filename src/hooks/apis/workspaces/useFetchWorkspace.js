@@ -1,5 +1,7 @@
-import { useAuth } from "@/hooks/context/useAuth"
-import { useQuery } from "@tanstack/react-query";
+import { useQuery } from '@tanstack/react-query';
+
+import { useAuth } from '@/hooks/context/useAuth';
+import { fetchWorkspacesRequest } from '@/api/workspaces';
 
 export const useFetchWorkspace = () => {
     const { auth } = useAuth();
@@ -11,9 +13,9 @@ export const useFetchWorkspace = () => {
     });
 
     return {
-        isFetching, 
-        isSuccess, 
+        isFetching,
+        isSuccess,
         error,
         workspaces
     };
-}
+};
