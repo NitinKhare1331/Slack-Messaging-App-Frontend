@@ -1,9 +1,8 @@
-import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from '@/components/ui/toaster';
 import { AppRoutes } from './Routes';
-import { AppContextProvider } from './context/AppContext';
+import { AppContextProvider } from '@/context/AppContext';
 
 function App() {
 
