@@ -46,7 +46,7 @@ export const CreateWorkspaceModal = () => {
                     <DialogTitle>Create a new workspace</DialogTitle>
                 </DialogHeader>
 
-                <form onSubmit={handleFormSubmit} id='form' name='workspace'>
+                <form onSubmit={handleFormSubmit}>
                     <Input 
                         required
                         disabled={isPending}
