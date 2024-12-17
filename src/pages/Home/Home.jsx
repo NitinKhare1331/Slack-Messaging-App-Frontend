@@ -8,7 +8,7 @@ export const Home = () => {
 
     useEffect(() => {
 
-        if(isFetching) return 
+        if(isFetching) return;
 
         console.log("workspaces downloaded is", workspaces);
         
@@ -20,7 +20,7 @@ export const Home = () => {
 
     return (
         <>
-            Home
+            <h1>Home</h1>
             <UserButton />
         </>
     )
