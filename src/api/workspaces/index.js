@@ -50,7 +50,7 @@ export const fetchWorkspaceDetailsRequest = async ({ workspaceId, token }) => {
 
 export const deleteWorkspaceRequest = async ({ workspaceId, token, }) => {
     try {
-        const response = await axios.get(`/workspaces/${workspaceId}`, {
+        const response = await axios.delete(`/workspaces/${workspaceId}`, {
             headers: {
                 'x-access-token': token
             }
