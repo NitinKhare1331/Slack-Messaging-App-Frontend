@@ -29,7 +29,7 @@ export const WorkspaceSwitcher = () => {
                     className='cursor-pointer flex-col justify-start items-start'
                 >
                     {workspace?.name}
-                    <span className='text-xs text-muted-foregorund'>
+                    <span className='text-[11px] text-muted-foregorund'>
                         (Active Workspace)
                     </span>
                 </DropdownMenuItem>
