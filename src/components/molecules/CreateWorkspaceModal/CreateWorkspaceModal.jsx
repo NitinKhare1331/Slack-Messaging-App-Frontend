@@ -8,7 +8,6 @@ import { useCreateWorkspace } from '@/hooks/apis/workspaces/useCreateWorkspace';
 import { useCreateWorkspaceModal } from '@/hooks/context/useCreateWorkspaceModal';
 
 export const CreateWorkspaceModal = () => {
-    
     const { openCreateWorkspaceModal, setOpenCreateWorkspaceModal } = useCreateWorkspaceModal();
 
     const { isPending, createWorkspaceMutation } = useCreateWorkspace();
