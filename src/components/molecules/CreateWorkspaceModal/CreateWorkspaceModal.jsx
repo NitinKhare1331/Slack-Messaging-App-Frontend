@@ -1,3 +1,4 @@
+import { useQueryClient } from '@tanstack/react-query';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -6,9 +7,9 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Input } from '@/components/ui/input';
 import { useCreateWorkspace } from '@/hooks/apis/workspaces/useCreateWorkspace';
 import { useCreateWorkspaceModal } from '@/hooks/context/useCreateWorkspaceModal';
-import { useQueryClient } from '@tanstack/react-query';
 
 export const CreateWorkspaceModal = () => {
+
     const queryClient = useQueryClient();
 
     const { openCreateWorkspaceModal, setOpenCreateWorkspaceModal } = useCreateWorkspaceModal();
@@ -38,17 +39,15 @@ export const CreateWorkspaceModal = () => {
         }
     }
 
-
     return (
         <Dialog
             open={openCreateWorkspaceModal}
             onOpenChange={handleClose}
         >
-            <DialogContent aria-describedby={undefined}>
+            <DialogContent>
                 <DialogHeader>
                     <DialogTitle>Create a new workspace</DialogTitle>
                 </DialogHeader>
-
                 <form onSubmit={handleFormSubmit}>
                     <Input 
                         required
@@ -60,11 +59,10 @@ export const CreateWorkspaceModal = () => {
                     />
 
                     <div className='flex justify-end mt-5'>
-                        <Button disabled={isPending}>Create workspace</Button>
+                        <Button type="button" disabled={isPending}>Create workspace</Button>
                     </div>
                 </form>
             </DialogContent>
-
         </Dialog>
     );
 };

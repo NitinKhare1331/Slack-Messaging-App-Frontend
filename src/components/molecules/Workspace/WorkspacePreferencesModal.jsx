@@ -18,9 +18,10 @@ export const WorkspacePreferencesModal = () => {
     const { toast } = useToast();
     const [ workspaceId, setWorkspaceId ] = useState(null);
     const [ editOpen, setEditOpen ] = useState(false);
-    const [ renameValue, setRenameValue ] = useState(workspace?.name);
-
+    
     const { initialValue, openPreferences, setOpenPreferences, workspace } = useWorkspacePreferencesModal();
+    
+    const [ renameValue, setRenameValue ] = useState(workspace?.name);
 
     const { deleteWorkspaceMutation } = useDeleteWorkspace(workspaceId);
 
@@ -50,7 +51,8 @@ export const WorkspacePreferencesModal = () => {
             console.log('Error in deleting workspace', error);
             toast({
                 title: 'Error in deleting workspace',
-                type: 'error'
+                type: 'error',
+                variant: 'destructive'
             });
         }
     }
@@ -69,7 +71,8 @@ export const WorkspacePreferencesModal = () => {
             console.log('Error in updating workspace', error);
             toast({
                 title: 'Error in updating workspace',
-                type: 'error'
+                type: 'error',
+                variant: 'destructive'
             });
         }
     }
@@ -129,6 +132,7 @@ export const WorkspacePreferencesModal = () => {
                                 <DialogFooter>
                                     <DialogClose>
                                         <Button
+                                            type="button"
                                             variant="outline"
                                             disabled={isPending}
                                         >
