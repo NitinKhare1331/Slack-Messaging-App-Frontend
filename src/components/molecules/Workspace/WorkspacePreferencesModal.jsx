@@ -16,8 +16,9 @@ export const WorkspacePreferencesModal = () => {
     const queryClient = useQueryClient();
     const navigate = useNavigate();
     const { toast } = useToast();
-    const [workspaceId, setWorkspaceId] = useState(null);
+    const [ workspaceId, setWorkspaceId ] = useState(null);
     const [ editOpen, setEditOpen ] = useState(false);
+    const [ renameValue, setRenameValue ] = useState(workspace?.name);
 
     const { initialValue, openPreferences, setOpenPreferences, workspace } = useWorkspacePreferencesModal();
 
@@ -25,7 +26,6 @@ export const WorkspacePreferencesModal = () => {
 
     const { isPending, updateWorkspaceMutation } = useUpdateWorkspace(workspaceId);
 
-    const [renameValue, setRenameValue] = useState(workspace?.name);
 
     function handleClose() {
         setOpenPreferences(false);
