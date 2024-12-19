@@ -5,7 +5,7 @@ import { useAuth } from '@/hooks/context/useAuth';
 
 export const useUpdateWorkspace = (workspaceId) => {
     const { auth } = useAuth();
-    const {isPending, isSuccess, error, mutateAsync: updateWorkspaceMutation} = useMutation({
+    const {isLoading, isSuccess, error, mutateAsync : updateWorkspaceMutation} = useMutation({
         mutationFn: (name) => updateWorkspaceRequest({ workspaceId, name, token: auth?.token}),
         onSuccess: () => {
             console.log('Workspace updated successfully');
@@ -16,7 +16,7 @@ export const useUpdateWorkspace = (workspaceId) => {
     });
 
     return {
-        isPending,
+        isPending: isLoading,
         isSuccess,
         error,
         updateWorkspaceMutation
