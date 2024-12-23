@@ -4,11 +4,14 @@ import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { useAuth } from '@/hooks/context/useAuth';
 import { useWorkspacePreferencesModal } from '@/hooks/context/useWorkspacePreferencesModal';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { WorkspaceInviteModal } from '@/components/organisms/Modals/WorkspaceInviteModal';
 
 export const WorkspacePanelHeader = ({ workspace }) => {
 
     console.log('workspace is', workspace);
+
+    const [openInviteModal, setOpenInviteModal] = useState(false);
 
     const workspacemembers = workspace?.members;
 
@@ -28,7 +31,14 @@ export const WorkspacePanelHeader = ({ workspace }) => {
 
 
     return (
-        <div
+        <>
+            <WorkspaceInviteModal
+                openInviteModal={openInviteModal}
+                setOpenInviteModal={setOpenInviteModal}
+                workspaceName={workspace?.name}
+                joinCode={workspace?.joinCode}
+            />
+            <div
             className='flex items-center justify-between px-4 h-[50px] gap-0.5'
         >
             <DropdownMenu>
@@ -75,6 +85,7 @@ export const WorkspacePanelHeader = ({ workspace }) => {
                             <DropdownMenuSeparator />
                             <DropdownMenuItem
                                 className='cursor-pointer py-2'
+                                onClick={()=>{setOpenInviteModal(true)}}
                             >
                                 Invite people to {workspace?.name}
                             </DropdownMenuItem>
@@ -102,5 +113,6 @@ export const WorkspacePanelHeader = ({ workspace }) => {
                 </Button>
             </div>
         </div>
+        </>
     );
 };
