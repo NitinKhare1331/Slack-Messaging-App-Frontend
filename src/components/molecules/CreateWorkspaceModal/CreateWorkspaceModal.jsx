@@ -25,6 +25,8 @@ export const CreateWorkspaceModal = () => {
     }
 
     async function handleFormSubmit(e) {
+        console.log("Initial state for form submission");
+        
         e.preventDefault();
         try {
             const data = await createWorkspaceMutation({ name: workspaceName });
@@ -57,9 +59,8 @@ export const CreateWorkspaceModal = () => {
                         value={workspaceName}
                         onChange={(e) => setWorkspaceName(e.target.value)}
                     />
-
                     <div className='flex justify-end mt-5'>
-                        <Button type="button" disabled={isPending}>Create workspace</Button>
+                        <Button disabled={isPending}>Create workspace</Button>
                     </div>
                 </form>
             </DialogContent>
