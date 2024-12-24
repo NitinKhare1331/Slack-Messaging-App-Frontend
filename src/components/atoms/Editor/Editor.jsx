@@ -3,14 +3,16 @@ import { useEffect, useRef, useState } from "react";
 import 'quill/dist/quill.snow.css'; //to load toolbar
 import { Button } from "@/components/ui/button";
 import { PiTextAa } from 'react-icons/pi';
+import { Hint } from "../Hint/Hint";
+import { ImageIcon } from "lucide-react";
 
 export const Editor = ({
-    variant = "create",
-    onSubmit,
-    onCancel,
-    placeholder,
-    disabled,
-    defaultValue
+    // variant = "create",
+    // onSubmit,
+    // onCancel,
+    // placeholder,
+    // disabled,
+    // defaultValue
 }) => {
 
     const [isToolbarVisible, setIsToolbarVisible] = useState(false);
@@ -39,7 +41,7 @@ export const Editor = ({
             modules: {
                 toolbar: [
                     ['bold', 'italic', 'underline', 'strike'],
-                    ['link', 'image'],
+                    ['link'],
                     [{ list: 'ordered' }, { list: 'bullet' }],
                     ['clean']
                 ],
@@ -79,14 +81,27 @@ export const Editor = ({
             <div className='h-full ql-custom' ref={containerRef} />
 
             <div className='flex px-2 pb-2 z-[5]'>
-                    <Button
-                        size="iconSm"
-                        variant="ghost"
-                        disabled={false}
-                        onClick={toggleToolbar}
-                    >
-                        <PiTextAa className='size-4' />
-                    </Button>
+                    <Hint label={!isToolbarVisible ? 'Hide toolbar' : 'Show toolbar'} side='bottom' align='center'>
+                        <Button
+                            size="iconSm"
+                            variant="ghost"
+                            disabled={false}
+                            onClick={toggleToolbar}
+                        >
+                            <PiTextAa className='size-4' />
+                        </Button>
+                    </Hint>
+
+                    <Hint label="Image">
+                        <Button
+                            size="iconSm"
+                            variant="ghost"
+                            disabled={false}
+                            onClick={() => {}}
+                        >
+                            <ImageIcon className='size-4' />
+                        </Button>
+                    </Hint>
                 </div>
             </div>
 
