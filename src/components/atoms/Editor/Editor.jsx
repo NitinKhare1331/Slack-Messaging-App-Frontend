@@ -1,6 +1,8 @@
 import Quill from "quill";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import 'quill/dist/quill.snow.css'; //to load toolbar
+import { Button } from "@/components/ui/button";
+import { PiTextAa } from 'react-icons/pi';
 
 export const Editor = ({
     variant = "create",
@@ -11,9 +13,18 @@ export const Editor = ({
     defaultValue
 }) => {
 
+    const [isToolbarVisible, setIsToolbarVisible] = useState(false);
     const containerRef = useRef(); // required to initialize the editor
     const defaultValueRef = useRef();
     const quillRef = useRef();
+
+    function toggleToolbar() {
+        setIsToolbarVisible(!isToolbarVisible);
+        const toolbar = containerRef.current.querySelector('.ql-toolbar');
+        if(toolbar) {
+            toolbar.classList.toggle('hidden');
+        }
+    }
 
     useEffect(() => {
 
@@ -66,6 +77,17 @@ export const Editor = ({
         <div className="flex flex-col">
             <div className='flex flex-col border border-slate-300 rounded-md overflow-hidden focus-within:shadow-sm focus-within:border-slate-400 bg-white'>
             <div className='h-full ql-custom' ref={containerRef} />
+
+            <div className='flex px-2 pb-2 z-[5]'>
+                    <Button
+                        size="iconSm"
+                        variant="ghost"
+                        disabled={false}
+                        onClick={toggleToolbar}
+                    >
+                        <PiTextAa className='size-4' />
+                    </Button>
+                </div>
             </div>
 
             <p className='p-2 text-[10px] text-mutes-foreground flex justify-end'>
