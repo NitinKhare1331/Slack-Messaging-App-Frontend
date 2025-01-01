@@ -51,7 +51,9 @@ export const Editor = ({
                         enter: {
                             key: 'Enter',
                             handler: () => {
-                                return;
+                                const messageContent = JSON.stringify(quillRef.current?.getContents());
+                                onSubmit({ body: messageContent });
+                                quillRef.current?.setText('');
                             }
                         },
                         shift_enter: {

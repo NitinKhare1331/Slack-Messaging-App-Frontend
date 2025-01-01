@@ -11,11 +11,11 @@ export const MessageRenderer = ({ value }) => {
 
     useEffect(() => {
 
-        console.log('Renderer Ref: ', rendererRef.current);
+        // console.log('Renderer Ref: ', rendererRef.current);
 
         if(!rendererRef.current) return;
 
-        console.log('Value: ', value);
+        // console.log('Value: ', value);
 
         const quill = new Quill(document.createElement('div'), {
             theme: 'snow'
@@ -28,7 +28,7 @@ export const MessageRenderer = ({ value }) => {
 
         quill.setContents(content);
 
-        console.log('Content: ', quill.root.innerHTML);
+        // console.log('Content: ', quill.root.innerHTML);
 
         const isContentEmpty = quill.getText().trim().length === 0;
 

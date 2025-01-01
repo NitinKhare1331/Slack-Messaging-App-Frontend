@@ -1,5 +1,5 @@
 import { MessageRenderer } from "@/components/atoms/MessageRenderer/MessageRenderer"
-import { AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export const Message = ({ authorImage, authorName, createdAt, body }) => {
     
@@ -27,7 +27,7 @@ export const Message = ({ authorImage, authorName, createdAt, body }) => {
                             &nbsp;&nbsp;
                         </span>
                         <button className="text-xs text-muted-foreground hover:underline">
-                            {createdAt}
+                            {createdAt || "Just Now"}
                         </button>
 
                         <MessageRenderer value={body}/>
