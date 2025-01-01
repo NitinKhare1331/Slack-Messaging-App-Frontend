@@ -3,7 +3,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 export const Hint = ({ align, side, label, children }) => {
     return (
         <TooltipProvider>
-            <Tooltip delayDuration={50}>
+            <Tooltip delayDuration={150}>
                 <TooltipTrigger asChild>
                     {children}
                 </TooltipTrigger>
