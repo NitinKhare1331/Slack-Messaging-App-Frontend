@@ -45,7 +45,7 @@ export const Channel = () => {
     useEffect(() => {
         if(isSuccess){
             console.log('channel message is fetched');
-            setMessageList(messages);
+            setMessageList(messages.reverse());
         }
     }, [isSuccess, setMessageList, messages, channelId])
 
@@ -74,7 +74,7 @@ export const Channel = () => {
             ref={messageContainerListRef}
             className='flex-5 overflow-y-auto p-5 gap-y-2 no-scrollbar hover-scrollbar'
         >
-            {messageList?.reverse().map((message) => {
+            {messageList?.map((message) => {
                 return <Message 
                     key={message?._id} 
                     body={message?.body} 
