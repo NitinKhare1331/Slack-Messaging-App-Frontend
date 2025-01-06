@@ -2,8 +2,10 @@ import { UserButton } from '@/components/atoms/UserButton/UserButton';
 import { SidebarButton } from '@/components/molecules/SidebarButton/SidebarButton';
 import { BellIcon, HomeIcon, MessageSquareIcon, MoreHorizontalIcon } from 'lucide-react';
 import { WorkspaceSwitcher } from './WorkspaceSwitcher';
+import { useNavigate } from 'react-router-dom';
 
 export const WorkspaceSidebar = () => {
+    const navigate = useNavigate();
     return (
         <aside
             className="w-[70px] h-full bg-slack-dark flex flex-col gap-y-4 items-center pt-[10px] pb-[5px]"
@@ -12,6 +14,7 @@ export const WorkspaceSidebar = () => {
             <SidebarButton 
                 Icon={HomeIcon}
                 label="Home"
+                onClick={()=>navigate('/home')}
             />
 
             <SidebarButton

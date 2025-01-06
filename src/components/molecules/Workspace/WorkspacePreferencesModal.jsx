@@ -50,7 +50,7 @@ export const WorkspacePreferencesModal = () => {
                 return;
             }
             await deleteWorkspaceMutation();
-            navigate('home');
+            navigate('/home');
             queryClient.invalidateQueries('fetchWorkspaces');
             setOpenPreferences(false);
             toast({

@@ -48,7 +48,7 @@ export const CreateWorkspaceModal = () => {
         >
             <DialogContent>
                 <DialogHeader>
-                    <DialogTitle>Create a new workspace</DialogTitle>
+                    <DialogTitle>Create a new workspace(Name must be unique)</DialogTitle>
                 </DialogHeader>
                 <form onSubmit={handleFormSubmit}>
                     <Input 

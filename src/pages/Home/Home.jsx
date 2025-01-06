@@ -29,8 +29,9 @@ export const Home = () => {
 
     return (
         <>
-            <h1>Home</h1>
-            <UserButton />
+            <div className="mt-5 ml-5">
+                <UserButton />
+            </div>
         </>
     )
 }

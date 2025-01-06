@@ -102,15 +102,11 @@ export const WorkspacePanelHeader = ({ workspace }) => {
                 <Button
                     variant='transparent'
                     size='iconSm'
+                    onClick={()=>{setOpenPreferences(true)}}
                 >
-                    <ListFilterIcon className='size-5' />
-                </Button>
-
-                <Button
-                    variant='transparent'
-                    size='iconSm'
-                >
-                    <SquarePenIcon className='size-5' />
+                    <SquarePenIcon 
+                        className='size-5'
+                    />
                 </Button>
             </div>
         </div>

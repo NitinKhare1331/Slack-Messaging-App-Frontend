@@ -11,8 +11,9 @@ export const WorkspaceLayout = ({ children }) => {
                 <WorkspaceSidebar />
                 <ResizablePanelGroup direction="horizontal" autoSaveId={'workspace-resize'}>
                     <ResizablePanel 
-                        defaultSize={40}
-                        minSize={11}
+                        defaultSize={20}
+                        minSize={20}
+                        maxSize={30}
                         className="bg-slack-medium"
                     >
                         <WorkspacePanel />
